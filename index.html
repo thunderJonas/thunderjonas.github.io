@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Screwshop herunterladen</title>
+<style>
+  :root {
+    --wood-dark: #1a1712;
+    --wood: #2b2418;
+    --wood-light: #3d3323;
+    --gold: #d9a441;
+    --gold-light: #f0c86a;
+    --text: #e8ddc9;
+    --text-dim: #a89a7d;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--wood-dark);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 32px 20px 60px;
+  }
+
+  main {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .icon {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
+    display: block;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 28px;
+    margin: 0 0 6px;
+    letter-spacing: 0.01em;
+  }
+
+  .tagline {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 15px;
+    margin: 0 0 32px;
+    line-height: 1.5;
+  }
+
+  .download {
+    display: block;
+    background: linear-gradient(180deg, var(--gold-light), var(--gold));
+    color: #241c0e;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 18px 24px;
+    border-radius: 14px;
+    box-shadow: 0 6px 0 #8a651f, 0 10px 20px rgba(0,0,0,0.4);
+    transition: transform 0.08s ease;
+  }
+
+  .download:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #8a651f, 0 4px 10px rgba(0,0,0,0.4);
+  }
+
+  .download .sub {
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 2px;
+    opacity: 0.75;
+  }
+
+  .steps {
+    margin-top: 36px;
+    background: var(--wood);
+    border: 1px solid var(--wood-light);
+    border-radius: 14px;
+    padding: 20px 20px 22px;
+  }
+
+  .steps h2 {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gold);
+    margin: 0 0 14px;
+  }
+
+  .steps ol {
+    margin: 0;
+    padding-left: 22px;
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .steps li::marker {
+    color: var(--gold);
+    font-weight: 700;
+  }
+
+  .note {
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+
+  @media (min-width: 480px) {
+    body { padding-top: 64px; }
+    h1 { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="icon.png" alt="Screwshop Icon">
+  <h1>Screwshop</h1>
+  <p class="tagline">Schrauben-Sortier-Puzzle in der Werkstatt.<br>Direkt installieren, ganz ohne Store.</p>
+
+  <a class="download" href="https://github.com/thunderJonas/screwshop-builds/releases/download/v0.1.0/screwshop-release.apk">
+    Für Android herunterladen
+    <span class="sub">APK, Version 0.1.0</span>
+  </a>
+
+  <div class="steps">
+    <h2>So geht's</h2>
+    <ol>
+      <li>Oben auf den Button tippen, die Datei lädt herunter</li>
+      <li>Auf die fertige Downloadmeldung tippen</li>
+      <li>Einmalig „Installation aus dieser Quelle zulassen" antippen</li>
+      <li>„Installieren" antippen, fertig</li>
+    </ol>
+  </div>
+
+  <p class="note">
+    Android warnt bei Apps ausserhalb des Play Store einmalig, das ist
+    normal und kein Fehler. Screwshop kommt nicht aus dem Play Store,
+    weil die Veröffentlichung dort noch läuft.
+  </p>
+
+  <footer>Screwshop · früher Testbuild</footer>
+</main>
+</body>
+</html>
