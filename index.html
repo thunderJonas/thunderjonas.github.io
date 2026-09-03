@@ -156,6 +156,15 @@
     color: var(--text-dim);
   }
 
+  footer a {
+    color: var(--text-dim);
+    text-decoration: underline;
+  }
+
+  footer a:hover {
+    color: var(--gold-light);
+  }
+
   @media (min-width: 480px) {
     body { padding-top: 64px; }
     h1 { font-size: 32px; }
@@ -194,7 +203,10 @@
     weil die Veröffentlichung dort noch läuft.
   </p>
 
-  <footer>Screwshop · früher Testbuild</footer>
+  <footer>
+    Screwshop · früher Testbuild<br>
+    <a href="/privacy.html">Datenschutzerklärung</a>
+  </footer>
 </main>
 </body>
 </html>

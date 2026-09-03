@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Screwshop Datenschutz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+
+<style>
+  :root {
+    --paper:      #F3EEE4;
+    --paper-2:    #EAE2D2;
+    --card:       #FFFDF8;
+    --ink:        #2B2318;
+    --ink-2:      #5B5142;
+    --ink-3:      #8A7F6C;
+    --rule:       #DCD2BC;
+    --brass:      #A5701F;
+    --brass-ink:  #7C5417;
+    --brass-soft: #F0E1C4;
+    --good:       #3F6B4A;
+    --focus:      #3D6E8F;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:      #1B160E;
+      --paper-2:    #251F14;
+      --card:       #221C13;
+      --ink:        #EFE6D3;
+      --ink-2:      #BFB199;
+      --ink-3:      #8C8271;
+      --rule:       #3A3122;
+      --brass:      #D9A441;
+      --brass-ink:  #F0C878;
+      --brass-soft: #33290F;
+      --good:       #7BB98C;
+      --focus:      #7FB4D9;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper:      #1B160E;
+    --paper-2:    #251F14;
+    --card:       #221C13;
+    --ink:        #EFE6D3;
+    --ink-2:      #BFB199;
+    --ink-3:      #8C8271;
+    --rule:       #3A3122;
+    --brass:      #D9A441;
+    --brass-ink:  #F0C878;
+    --brass-soft: #33290F;
+    --good:       #7BB98C;
+    --focus:      #7FB4D9;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Source Sans 3", system-ui, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--brass-ink); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:hover, a:focus-visible { color: var(--brass); }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+  .band {
+    background: linear-gradient(180deg, var(--paper-2), var(--paper) 85%);
+    border-bottom: 1px solid var(--rule);
+    padding: 56px 24px 40px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--brass-ink);
+    margin: 0 0 14px;
+  }
+  h1 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(32px, 6vw, 46px);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+    margin: 0 0 12px;
+  }
+  .lede {
+    color: var(--ink-2);
+    max-width: 60ch;
+    font-size: 16.5px;
+    margin: 0 0 18px;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 12.5px;
+    color: var(--ink-3);
+  }
+
+  main.wrap { padding: 44px 24px 80px; }
+
+  nav.toc {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 18px 22px;
+    margin: 0 0 40px;
+  }
+  nav.toc p {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin: 0 0 10px;
+  }
+  nav.toc ol {
+    margin: 0;
+    padding: 0 0 0 1.2em;
+    columns: 2;
+    column-gap: 28px;
+  }
+  nav.toc li { break-inside: avoid; margin-bottom: 6px; font-size: 14.5px; }
+  nav.toc a { color: var(--ink-2); }
+  nav.toc a:hover { color: var(--brass-ink); }
+
+  section {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--rule);
+    scroll-margin-top: 20px;
+  }
+  section:last-of-type { border-bottom: none; }
+
+  .num {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 13px;
+    color: var(--brass-ink);
+    letter-spacing: 0.04em;
+  }
+  h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 600;
+    font-size: 23px;
+    letter-spacing: -0.005em;
+    margin: 4px 0 14px;
+    text-wrap: balance;
+  }
+  h3 {
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 600;
+    font-size: 15.5px;
+    margin: 20px 0 8px;
+    color: var(--ink);
+  }
+  p { max-width: 64ch; margin: 0 0 13px; }
+  p:last-child { margin-bottom: 0; }
+  ul { max-width: 64ch; margin: 0 0 13px; padding-left: 1.3em; }
+  li { margin-bottom: 6px; }
+  strong { font-weight: 600; color: var(--ink); }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--brass);
+    border-radius: 0 3px 3px 0;
+    padding: 16px 20px;
+    margin: 4px 0 16px;
+    max-width: 64ch;
+  }
+  .card p { margin-bottom: 0; font-size: 15.5px; color: var(--ink-2); }
+
+  .table-scroll { overflow-x: auto; max-width: 100%; margin-bottom: 14px; }
+  table { border-collapse: collapse; width: 100%; min-width: 480px; font-size: 14.5px; }
+  th, td { text-align: left; padding: 9px 14px 9px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    font-weight: 500;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+
+  .fill {
+    background: var(--brass-soft);
+    color: var(--brass-ink);
+    padding: 1px 7px;
+    border-radius: 3px;
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.92em;
+    white-space: nowrap;
+  }
+
+  footer.wrap {
+    padding: 0 24px 60px;
+    color: var(--ink-3);
+    font-size: 13.5px;
+  }
+  footer.wrap a { color: var(--ink-3); }
+</style>
+</head>
+<body>
+
+<div class="band">
+  <div class="wrap">
+    <p class="eyebrow">Datenschutzerklärung</p>
+    <h1>Screwshop</h1>
+    <p class="lede">Diese Erklärung beschreibt, welche Daten beim Spielen von Screwshop entstehen, wer sie verarbeitet und welche Rechte dabei bestehen. Screwshop ist ein Sortier-Puzzle für Android und iOS.</p>
+    <div class="meta">
+      <span>Stand: 03.09.2026</span>
+      <span>Verantwortlich: Jonas Fischer</span>
+      <span>Kontakt: kontakt@jif-works.de</span>
+    </div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <nav class="toc" aria-label="Inhalt">
+    <p>Inhalt</p>
+    <ol>
+      <li><a href="#kurzfassung">Kurzfassung</a></li>
+      <li><a href="#verantwortlich">Verantwortliche Stelle</a></li>
+      <li><a href="#spielstand">Spielstand auf dem Gerät</a></li>
+      <li><a href="#werbung">Werbung über Google AdMob</a></li>
+      <li><a href="#einwilligung">Einwilligung im EWR und UK</a></li>
+      <li><a href="#weitergabe">Weitergabe an Dritte</a></li>
+      <li><a href="#rechte">Rechte der Nutzer</a></li>
+      <li><a href="#kinder">Kinder</a></li>
+      <li><a href="#aenderungen">Änderungen dieser Erklärung</a></li>
+    </ol>
+  </nav>
+
+  <section id="kurzfassung">
+    <span class="num">01</span>
+    <h2>Kurzfassung</h2>
+    <p>Screwshop verlangt kein Konto und keine Anmeldung. Der Spielfortschritt bleibt auf dem Gerät. Die App zeigt Werbung über Google AdMob; dabei verarbeitet Google Daten wie Geräte­kennungen zur Ausspielung und Messung von Anzeigen. Für Nutzer im Europäischen Wirtschaftsraum und im Vereinigten Königreich wird vor personalisierter Werbung eine Einwilligung eingeholt.</p>
+  </section>
+
+  <section id="verantwortlich">
+    <span class="num">02</span>
+    <h2>Verantwortliche Stelle</h2>
+    <p>Jonas Fischer, Einzelunternehmer<br>
+    <span class="fill">[Anschrift einfügen]</span><br>
+    E-Mail: kontakt@jif-works.de</p>
+  </section>
+
+  <section id="spielstand">
+    <span class="num">03</span>
+    <h2>Spielstand auf dem Gerät</h2>
+    <p>Freigeschaltete Level, Münzen, Ton-Einstellung und Fortschritt in der Werkstatt-Übersicht werden ausschließlich lokal auf dem Gerät gespeichert. Diese Daten verlassen das Gerät nicht, wir erhalten keine Kopie, und ein Wechsel des Geräts löscht den Fortschritt.</p>
+  </section>
+
+  <section id="werbung">
+    <span class="num">04</span>
+    <h2>Werbung über Google AdMob</h2>
+    <p>Screwshop zeigt zwei Arten von Werbung: ein Belohnungsvideo als freiwillige Option nach einer Niederlage, und gelegentlich eine Vollbildanzeige zwischen Leveln. Beide werden über <strong>Google AdMob</strong> ausgeliefert (Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland).</p>
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr><th>Was verarbeitet wird</th><th>Wozu</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Werbe-Kennung des Geräts, IP-Adresse (gekürzt)</td><td>Anzeige und Betrugserkennung</td></tr>
+          <tr><td>Grober Standort (Land/Region, aus der IP)</td><td>Regional passende Anzeigen</td></tr>
+          <tr><td>App- und Anzeigen-Interaktion (angesehen, angetippt)</td><td>Messung, Abrechnung mit Werbetreibenden</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Diese Verarbeitung übernimmt Google als eigenständig Verantwortlicher. Details stehen in der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Datenschutzerklärung von Google</a> und den <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob-Richtlinien zur Datenverarbeitung</a>.</p>
+  </section>
+
+  <section id="einwilligung">
+    <span class="num">05</span>
+    <h2>Einwilligung im EWR und UK</h2>
+    <p>Beim ersten Start prüft die App über Googles User Messaging Platform, ob eine Einwilligung nötig ist. Nutzern im Europäischen Wirtschaftsraum, in der Schweiz und im Vereinigten Königreich wird vor jeder personalisierten Werbung ein Einwilligungsdialog gezeigt. Ohne Einwilligung schaltet die App auf nicht personalisierte Werbung um, die App bleibt in jedem Fall vollständig nutzbar.</p>
+    <div class="card">
+      <p>Die Einwilligung wird aktuell einmalig beim ersten Start abgefragt. Eine Möglichkeit, die Wahl später direkt im Spiel zu ändern, ist in Arbeit und ergänzt diesen Abschnitt, sobald sie verfügbar ist. Bis dahin lässt sich die Einwilligung über die AdMob-Berechtigungen des Geräts (Android: App-Einstellungen) oder durch Neuinstallation zurücksetzen.</p>
+    </div>
+  </section>
+
+  <section id="weitergabe">
+    <span class="num">06</span>
+    <h2>Weitergabe an Dritte</h2>
+    <p>Außer an Google AdMob für die Anzeige von Werbung geben wir keine Daten an Dritte weiter. Wir betreiben keine eigenen Server, keine Analyse- oder Tracking-Dienste außerhalb von AdMob, und wir verkaufen keine Daten.</p>
+  </section>
+
+  <section id="rechte">
+    <span class="num">07</span>
+    <h2>Rechte der Nutzer</h2>
+    <p>Da wir selbst keine personenbezogenen Daten speichern, betreffen Auskunfts-, Berichtigungs- und Löschrechte in der Praxis vor allem die Verarbeitung durch Google. Anfragen dazu lassen sich direkt über die <a href="https://myadcenter.google.com" target="_blank" rel="noopener">Werbeeinstellungen von Google</a> stellen. Fragen zu dieser Erklärung oder zur App richten sich an kontakt@jif-works.de.</p>
+  </section>
+
+  <section id="kinder">
+    <span class="num">08</span>
+    <h2>Kinder</h2>
+    <p>Screwshop richtet sich nicht gezielt an Kinder unter 13 Jahren. Uns ist nicht bekannt, dass wir wissentlich Daten von Kindern unter 13 Jahren verarbeiten. Sollte uns ein solcher Fall bekannt werden, entfernen wir die betreffenden Daten.</p>
+  </section>
+
+  <section id="aenderungen">
+    <span class="num">09</span>
+    <h2>Änderungen dieser Erklärung</h2>
+    <p>Ändert sich, welche Daten verarbeitet werden, etwa durch neue Werbeformate oder Käufe in der App, wird diese Erklärung entsprechend aktualisiert. Das Datum oben zeigt die zuletzt gültige Fassung.</p>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  Diese Seite ist die Datenschutzerklärung für die App <strong>Screwshop</strong>, verlinkt aus der App selbst sowie aus den Store-Einträgen bei Google Play und dem App Store. <a href="/">Zurück zur Startseite</a>
+</footer>
+
+</body>
+</html>
