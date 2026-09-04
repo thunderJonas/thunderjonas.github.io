@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Screwshop herunterladen</title>
+<title>Screwshop</title>
+<meta name="description" content="Screwshop ist ein Schrauben-Sortier-Puzzle: freiliegende Schrauben in Farbboxen sortieren, bevor die Ablage voll läuft. 120 handgeprüfte Level, kostenlos für Android und im Browser.">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8844611635993918"
      crossorigin="anonymous"></script>
 <style>
@@ -29,23 +30,22 @@
   }
 
   body {
-    min-height: 100vh;
     display: flex;
     justify-content: center;
-    padding: 32px 20px 60px;
   }
 
   main {
     width: 100%;
-    max-width: 420px;
+    max-width: 460px;
+    padding: 32px 20px 60px;
   }
 
   .icon {
-    width: 96px;
-    height: 96px;
-    border-radius: 22px;
+    width: 88px;
+    height: 88px;
+    border-radius: 20px;
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto 18px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.5);
   }
 
@@ -60,8 +60,55 @@
     text-align: center;
     color: var(--text-dim);
     font-size: 15px;
-    margin: 0 0 32px;
+    margin: 0 0 30px;
     line-height: 1.5;
+  }
+
+  section {
+    margin: 34px 0;
+  }
+
+  section h2 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    margin: 0 0 14px;
+  }
+
+  section p {
+    margin: 0 0 12px;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--text);
+  }
+
+  section p:last-child { margin-bottom: 0; }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .fact {
+    background: var(--wood);
+    border: 1px solid var(--wood-light);
+    border-radius: 12px;
+    padding: 14px 16px;
+  }
+
+  .fact strong {
+    display: block;
+    font-size: 20px;
+    color: var(--gold-light);
+    margin-bottom: 2px;
+  }
+
+  .fact span {
+    font-size: 12.5px;
+    color: var(--text-dim);
   }
 
   .download {
@@ -114,20 +161,13 @@
   }
 
   .steps {
-    margin-top: 36px;
     background: var(--wood);
     border: 1px solid var(--wood-light);
     border-radius: 14px;
     padding: 20px 20px 22px;
   }
 
-  .steps h2 {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--gold);
-    margin: 0 0 14px;
-  }
+  .steps h2 { margin-bottom: 14px; }
 
   .steps ol {
     margin: 0;
@@ -140,6 +180,26 @@
   .steps li::marker {
     color: var(--gold);
     font-weight: 700;
+  }
+
+  .faq-item {
+    border-top: 1px solid var(--wood-light);
+    padding: 16px 0;
+  }
+
+  .faq-item:first-child { border-top: none; padding-top: 0; }
+
+  .faq-item h3 {
+    font-size: 15.5px;
+    margin: 0 0 6px;
+    color: var(--text);
+  }
+
+  .faq-item p {
+    margin: 0;
+    font-size: 14.5px;
+    color: var(--text-dim);
+    line-height: 1.6;
   }
 
   .note {
@@ -166,7 +226,7 @@
   }
 
   @media (min-width: 480px) {
-    body { padding-top: 64px; }
+    main { padding-top: 56px; }
     h1 { font-size: 32px; }
   }
 </style>
@@ -175,7 +235,23 @@
 <main>
   <img class="icon" src="icon.png" alt="Screwshop Icon">
   <h1>Screwshop</h1>
-  <p class="tagline">Schrauben-Sortier-Puzzle in der Werkstatt.<br>Direkt installieren, ganz ohne Store.</p>
+  <p class="tagline">Ein Schrauben-Sortier-Puzzle in einer kleinen Werkstatt.<br>Ruhig, knifflig, ohne Zeitdruck.</p>
+
+  <section>
+    <h2>Worum geht's</h2>
+    <p>In Screwshop liegen Bretter übereinandergestapelt auf einer kleinen Werkbank, jedes mit ein paar farbigen Schrauben festgehalten. Frei liegt nur, was gerade oben ist: eine Schraube antippen, und sie wandert in eine Sammelbox derselben Farbe. Ist ein Brett komplett abgeschraubt, fällt es weg und gibt den Blick auf das nächste frei.</p>
+    <p>Der Haken dabei ist die Ablage: nur wenige Plätze zwischenlagern, bevor sie voll ist. Man muss also vorausdenken, welche Schraube als Nächstes freiliegt, nicht nur die nächstbeste tippen. Ein bisschen wie Solitär, nur mit Werkzeug statt Karten.</p>
+  </section>
+
+  <section>
+    <h2>Auf einen Blick</h2>
+    <div class="facts">
+      <div class="fact"><strong>120</strong><span>Level, jedes einzeln von einem Bot durchgespielt und geprüft</span></div>
+      <div class="fact"><strong>Kostenlos</strong><span>keine Pflicht-Käufe, Werbung ist immer freiwillig</span></div>
+      <div class="fact"><strong>Offline</strong><span>läuft komplett ohne Internetverbindung</span></div>
+      <div class="fact"><strong>Kein Zeitdruck</strong><span>kein Timer, kein Highscore-Stress</span></div>
+    </div>
+  </section>
 
   <a class="download" href="https://github.com/thunderJonas/thunderjonas.github.io/releases/download/v0.1.0/screwshop-release.apk">
     Für Android herunterladen
@@ -187,24 +263,43 @@
     <span class="sub">iPhone, iPad, Android, PC. Am besten im Hochformat</span>
   </a>
 
-  <div class="steps">
-    <h2>So geht's</h2>
+  <section class="steps">
+    <h2>So installierst du die Android-Version</h2>
     <ol>
       <li>Oben auf den Button tippen, die Datei lädt herunter</li>
       <li>Auf die fertige Downloadmeldung tippen</li>
       <li>Einmalig „Installation aus dieser Quelle zulassen" antippen</li>
       <li>„Installieren" antippen, fertig</li>
     </ol>
-  </div>
+  </section>
+
+  <section>
+    <h2>Häufige Fragen</h2>
+    <div class="faq-item">
+      <h3>Warum nicht direkt aus dem Play Store?</h3>
+      <p>Die Play-Store-Veröffentlichung läuft gerade noch durch Googles Prüfung. Bis dahin ist die App hier direkt installierbar, technisch dieselbe Version, die später auch im Store landet.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Ist die Browser-Version genauso wie die App?</h3>
+      <p>Ja, gleiche Level, gleiche Regeln. Nur Werbung läuft in der Browser-Version nicht, die App-Version zeigt gelegentlich ein optionales Belohnungsvideo oder eine kurze Anzeige zwischen Leveln.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Muss ich Werbung ansehen, um zu spielen?</h3>
+      <p>Nein. Werbung ist entweder freiwillig (Belohnungsvideo für eine zweite Chance) oder erscheint höchstens alle paar Level kurz zwischendurch.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Speichert die App meine persönlichen Daten?</h3>
+      <p>Nein, der Spielfortschritt bleibt lokal auf dem Gerät. Details stehen in der <a href="/privacy.html" style="color: var(--gold-light);">Datenschutzerklärung</a>.</p>
+    </div>
+  </section>
 
   <p class="note">
     Android warnt bei Apps ausserhalb des Play Store einmalig, das ist
-    normal und kein Fehler. Screwshop kommt nicht aus dem Play Store,
-    weil die Veröffentlichung dort noch läuft.
+    normal und kein Fehler.
   </p>
 
   <footer>
-    Screwshop · früher Testbuild<br>
+    Screwshop · von einem einzelnen Entwickler gebaut<br>
     <a href="/privacy.html">Datenschutzerklärung</a>
   </footer>
 </main>
